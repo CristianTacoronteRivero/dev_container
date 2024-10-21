@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     tags:
-      - 'v*.*.*'  # Escucha cualquier tag que siga el formato de versión, como v1.0.0
+      - 'v*.*.*'
 
 jobs:
   build:
