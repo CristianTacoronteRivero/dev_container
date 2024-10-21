@@ -40,7 +40,7 @@ name: Print Hola Test on Tag
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - '*'
 jobs:
   print-message:
     runs-on: ubuntu-latest
