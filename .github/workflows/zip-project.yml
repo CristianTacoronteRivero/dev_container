@@ -29,8 +29,8 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         token: ${{ secrets.GH_TOKEN }}
-        tag: ${{ github.ref }}
-        name: Release ${{ github.ref }}
+        tag: ${{ github.ref_name }}
+        name: Release ${{ github.ref_name }}
         body: |
-            Este es el código comprimido para la versión ${{ github.ref }}.
+            Este es el código comprimido para la versión ${{ github.ref_name }}.
         artifacts: project.zip
