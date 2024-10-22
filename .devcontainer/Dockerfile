@@ -32,17 +32,17 @@ RUN echo "if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi" >> /h
 USER dev_container
 
 # Establecer el directorio de trabajo
-WORKDIR /workspace/dev_container
+WORKDIR /home/dev_container
 
 # Instalar herramientas de desarrollo adicionales para Python
 RUN pip install --upgrade pip && \
     pip install virtualenv wheel setuptools
 
 # Copiar la carpeta .devcontainer al directorio de trabajo del contenedor
-COPY .devcontainer /workspace/dev_container/.devcontainer
+COPY .devcontainer /home/dev_container/.devcontainer
 
 # Copiar el archivo README.md al directorio de trabajo del contenedor
-COPY README.md /workspace/dev_container/
+COPY README.md /home/dev_container/
 
 # Comando por defecto para ejecutar el contenedor en modo interactivo con bash
 CMD ["/bin/bash"]

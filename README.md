@@ -104,9 +104,8 @@ RUN sudo apt-get update && \
 # Instalar el solver glpk
 RUN pip install glpk
 
-# Establecer el directorio de trabajo que debe ser /workspace/dev_container
-# ya que el contenedor base lo he construido asi
-WORKDIR /workspace/glpk
+# Establecer el directorio de trabajo qcorrespondiente al proyecto
+WORKDIR /home/dev_container/project_glpk
 
 # Comando por defecto para ejecutar el contenedor en modo interactivo con bash
 CMD ["/bin/bash"]
