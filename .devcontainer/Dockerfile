@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
     nano \
     htop \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    tree
 
 # Crear el usuario dev_container, agregarlo al grupo sudo, y configurar sudo sin contraseña
 RUN useradd -m -G sudo -s /bin/bash dev_container && \
