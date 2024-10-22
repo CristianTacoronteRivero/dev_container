@@ -38,9 +38,11 @@ WORKDIR /workspace/dev_container
 RUN pip install --upgrade pip && \
     pip install virtualenv wheel setuptools
 
-# Copiar el archivo de configuración de la imagen base para
-# que el ususario que haga pull lo tenga como referencia
-COPY .devcontainer/Dockerfile .
+# Copiar la carpeta .devcontainer al directorio de trabajo del contenedor
+COPY .devcontainer /workspace/dev_container/.devcontainer
+
+# Copiar el archivo README.md al directorio de trabajo del contenedor
+COPY README.md /workspace/dev_container/
 
 # Comando por defecto para ejecutar el contenedor en modo interactivo con bash
 CMD ["/bin/bash"]
