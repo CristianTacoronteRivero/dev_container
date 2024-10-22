@@ -40,7 +40,7 @@ RUN pip install --upgrade pip && \
 
 # Copiar el archivo de configuración de la imagen base para
 # que el ususario que haga pull lo tenga como referencia
-COPY Dockerfile .
+COPY .devcontainer/Dockerfile .
 
 # Comando por defecto para ejecutar el contenedor en modo interactivo con bash
 CMD ["/bin/bash"]
