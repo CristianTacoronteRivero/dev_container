@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # Se ejecuta en cada push a la rama principal
+    tags:
+      - 'v*.*.*'  # Escucha pushes de tags que siguen este formato
   workflow_dispatch:  # Permite ejecutar manualmente este workflow
 
 jobs:
@@ -22,3 +24,13 @@ jobs:
       with:
         name: project-zip
         path: project.zip
+
+    - name: Create a GitHub Release and upload the ZIP
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          tag: ${{ github.ref }}
+          name: Release ${{ github.ref }}
+          body: |
+            Este es el código comprimido para la versión ${{ github.ref }}.
+          artifacts: project.zip
