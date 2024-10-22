@@ -27,8 +27,9 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        docker build -t cristiantr/dev_container_image:${{ env.TAG }} .
+        docker build -f .devcontainer/Dockerfile -t cristiantr/dev_container_image:${{ env.TAG }} .
         docker push cristiantr/dev_container_image:${{ env.TAG }}
+
 
     - name: Update latest tag
       run: |
