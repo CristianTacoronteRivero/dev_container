@@ -32,5 +32,5 @@ jobs:
         tag: ${{ github.ref }}
         name: Release ${{ github.ref }}
         body: |
-        Este es el código comprimido para la versión ${{ github.ref }}.
+            Este es el código comprimido para la versión ${{ github.ref }}.
         artifacts: project.zip
