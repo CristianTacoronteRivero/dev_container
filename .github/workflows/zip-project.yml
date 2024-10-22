@@ -1,0 +1,24 @@
+name: Zip Project
+
+on:
+  push:
+    branches:
+      - main  # Se ejecuta en cada push a la rama principal
+  workflow_dispatch:  # Permite ejecutar manualmente este workflow
+
+jobs:
+  create-zip:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create a ZIP of the project
+      run: zip -r project.zip .
+
+    - name: Upload ZIP file as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: project-zip
+        path: project.zip
