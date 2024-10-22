@@ -26,11 +26,11 @@ jobs:
         path: project.zip
 
     - name: Create a GitHub Release and upload the ZIP
-        uses: ncipollo/release-action@v1
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          tag: ${{ github.ref }}
-          name: Release ${{ github.ref }}
-          body: |
-            Este es el código comprimido para la versión ${{ github.ref }}.
-          artifacts: project.zip
+      uses: ncipollo/release-action@v1
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+        tag: ${{ github.ref }}
+        name: Release ${{ github.ref }}
+        body: |
+        Este es el código comprimido para la versión ${{ github.ref }}.
+        artifacts: project.zip
